@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Button from './components/Button/Button';
+import * as RGUI from 'react-graphical-ui';
+
   
 
 function App() {
@@ -13,7 +15,11 @@ function App() {
         Cliquez ici
       </Button>
       <Button style={{textDecoration:'underline'}} text="Un bouton" color='blue'/>
+      <RGUI.Circular value={47}  max={100} display="inline" withGrid={true} />
+      <RGUI.Histogram values={[ 20, 80, 19]} notAllreadyFull={true} whithGrid={true} gridDivisionCount={5} max={150} />
+
     </div>
+
   );
 }
 
