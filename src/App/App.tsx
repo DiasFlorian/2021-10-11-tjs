@@ -12,7 +12,7 @@ function App() {
         <img alt="" src="https://cdn.pixabay.com/photo/2019/09/23/04/50/jellyfish-4497496_960_720.jpg"/> 
         Cliquez ici
       </Button>
-      <Button style={{backgroundColor:'blue', textDecoration:'underline'}} bgColor="tomato" color="grey" onclickevent={()=>{}} text="Un bouton"/>
+      <Button style={{textDecoration:'underline'}} text="Un bouton" color='blue'/>
     </div>
   );
 }

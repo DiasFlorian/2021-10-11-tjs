@@ -1,7 +1,4 @@
 .Button {
-    background-color: rgb(197, 253, 253);
-    color: rgb(117, 117, 117);
-
     font-size: x-large;
     font-weight: 900;
     padding: 5px 10px;
@@ -23,3 +20,8 @@
 .Button *{
     vertical-align: middle;
 }
+
+.warning {
+    background-color: tomato;
+}
+
