@@ -25,6 +25,9 @@ export default class App extends Component<Props, State> {
   }
   render() {
     return (
+      <>
+      <div>{JSON.stringify(this.state)}</div>
+
       <div className="App">
         <Navbar></Navbar>
         <FlexLayout>
@@ -32,6 +35,7 @@ export default class App extends Component<Props, State> {
           <MemeForm />
         </FlexLayout>
       </div>
+      </>
     )
   }
 }

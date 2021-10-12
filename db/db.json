@@ -1,0 +1,49 @@
+{
+  "memes": [
+    {
+      "id": 0,
+      "imageId": 0,
+      "text": "j'ai dit les function c'est mieux que les class",
+      "x": 10,
+      "y": 200,
+      "fontSize": 50,
+      "fontWeight": "900",
+      "color": "#0000FF",
+      "underline": true,
+      "italic": true
+    },
+    {
+      "id": 1,
+      "imageId": 0,
+      "text": "Si tu utilise pas Hook useState, je recommence",
+      "x": 10,
+      "y": 200,
+      "fontSize": 50,
+      "fontWeight": "900",
+      "color": "#ABA0FF",
+      "underline": true,
+      "italic": true
+    },
+    {
+      "imageId": 0,
+      "text": "je ne connais pas l'id soit sympa",
+      "x": 10,
+      "y": 200,
+      "fontSize": 50,
+      "fontWeight": "900",
+      "color": "#0000FF",
+      "underline": true,
+      "italic": true,
+      "id": 2
+    }
+  ],
+  "images": [
+    {
+      "url": "/img/memes/1ermeme.jpg",
+      "titre": "1er meme",
+      "id": 0,
+      "w": 1000,
+      "h": 938
+    }
+  ]
+}
