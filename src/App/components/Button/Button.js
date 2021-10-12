@@ -6,7 +6,7 @@ const Button = (props) => {
     console.log(props);
     return (
         <button type={props.type} 
-        className={styles.Button} 
+        className={`${styles.Button} ${styles.clicked}`}
         style={{...props.style,backgroundColor:props.bgColor, color:props.color}}
         onClick={(evt)=>{
             props.onclickevent('C good on a cliqué sur moi, je te préviens père');

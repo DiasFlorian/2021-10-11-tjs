@@ -25,3 +25,8 @@
     background-color: tomato;
 }
 
+.clicked{
+    border: 1px solid grey;
+    box-shadow: 7px 7px 20px grey;
+}
+
