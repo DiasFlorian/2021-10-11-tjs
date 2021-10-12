@@ -5,7 +5,7 @@ import styles from './TEmplateName.module.css'
 
 function TemplateName(props) {
     return (
-        <div className={styles.Templatename} data-testid="TemplateName" style={{...props.style}} >
+        <div className={styles.Templatename} data-testid="TemplateName" style={{ ...props.style }} >
             {props.children}
         </div>
     );
@@ -14,8 +14,8 @@ function TemplateName(props) {
 
 
 TemplateName.propTypes = {
-children: PropTypes.any.isRequired,
-style: PropTypes.object
+    children: PropTypes.any.isRequired,
+    style: PropTypes.object
 };
 
 
