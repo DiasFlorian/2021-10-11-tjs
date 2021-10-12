@@ -1,4 +1,7 @@
-.MemeThumbnail {}
+.MemeThumbnail {
+    height: 80vh;
+    overflow-y: auto;
+}
 .MemeThumbnail>svg {
     display: inline-block;
     max-width: 512px;
