@@ -28,8 +28,15 @@
       "withStory": false,
       "withLazy": false,
       "customTemplates": {
-        "component": "grc_templates/function-functionnal/TemplateName.js"
+        "component": "grc_templates/function_functionnal/TemplateName.js"
       }
+    },
+    "uiFunction":{
+      "path": "src/App/components/ui",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
     },
     "genericClass": {
       "path": "src/App/components",

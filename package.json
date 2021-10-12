@@ -25,7 +25,10 @@
     "genericClass": "npx generate-react-cli c --type=genericClass",
     "functionnalClass": "npx generate-react-cli c --type=functionnalClass",
     "layoutFunc": "npx generate-react-cli c --type=layoutFunction",
-    "functionnalFunc": "npx generate-react-cli c --type=functionnalFunction"
+    "functionnalFunc": "npx generate-react-cli c --type=functionnalFunction",
+    "uiFunc": "npx generate-react-cli c --type=uiFunction",
+    "defaultCmp": "npx generate-react-cli c"
+
   },
   "eslintConfig": {
     "extends": [

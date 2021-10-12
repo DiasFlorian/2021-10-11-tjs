@@ -1,6 +1,11 @@
 import './App.css';
 import React, { Component } from 'react'
-import Button from './components/Button/Button';
+import Button from './components/ui/Button/Button';
+import Navbar from './components/ui/Navbar/Navbar';
+import MemeViewer, {demoMeme as defaultmeme} from './components/ui/MemeViewer/MemeViewer';
+import MemeForm from './components/functionnal/MemeForm/MemeForm';
+import FlexLayout from './components/layouts/FlexLayout/FlexLayout';
+
 
 interface Props {
 
@@ -20,11 +25,12 @@ export default class App extends Component<Props, State> {
   }
   render() {
     return (
-      <div>
-        Valeur du compteur :{this.state.counter}
-        <Button onclickevent={() => {
-          this.setState({counter:this.state.counter+1});
-        }}> Cliquez ici </Button>
+      <div className="App">
+        <Navbar></Navbar>
+        <FlexLayout>
+          <MemeViewer meme={defaultmeme.meme} image={defaultmeme.image}/>
+          <MemeForm />
+        </FlexLayout>
       </div>
     )
   }

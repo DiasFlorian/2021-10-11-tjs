@@ -1,0 +1,14 @@
+.FlexLayout {
+    display: flex;
+    padding: 0 10px;
+    height: 80vh;
+}
+
+.FlexLayout>*:first-child{
+    flex-grow: 1;
+}
+
+/*a suppr apres design*/
+.FlexLayout {
+    border: 1px solid black;
+}
