@@ -21,7 +21,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "genericClass": "npx generate-react-cli c --type=genericClass",
+    "functionnalClass": "npx generate-react-cli c --type=functionnalClass",
+    "layoutFunc": "npx generate-react-cli c --type=layoutFunction",
+    "functionnalFunc": "npx generate-react-cli c --type=functionnalFunction"
   },
   "eslintConfig": {
     "extends": [
