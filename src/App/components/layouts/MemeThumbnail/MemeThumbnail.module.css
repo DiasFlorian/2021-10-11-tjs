@@ -1,0 +1,9 @@
+.MemeThumbnail {}
+.MemeThumbnail>svg {
+    display: inline-block;
+    max-width: 512px;
+    height: 512px;
+    size:auto;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
