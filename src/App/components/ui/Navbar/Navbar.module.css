@@ -1,1 +1,8 @@
 .Navbar {}
+
+.title{
+    font-size: larger;
+    color: lightgray;
+    text-decoration: underline;
+    vertical-align: middle;
+}
