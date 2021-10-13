@@ -1,1 +1,12 @@
-.MemeForm {}
+.MemeForm {
+    display: inline-block;
+    height: 100%;
+    width: 32vw;
+    margin-left: 10px;
+    overflow-y: auto;
+    /* border: 1px solid black;*/
+    text-align: center;
+  }
+  .smallNumber {
+    width: 50px;
+  }

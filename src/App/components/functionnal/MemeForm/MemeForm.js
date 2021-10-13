@@ -2,31 +2,47 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './MemeForm.module.css';
 import Button from '../../ui/Button/Button';
+import store, { initialMeme } from '../../../store/store';
 
-const initialState = {}
+
+const initialState = {
+    images: [],
+    current: initialMeme
+};
+
+
 function MemeForm(props) {
     const [state, setstate] = useState(initialState)
     useEffect(() => {
-        return () => {
-            //willUnMount effect
-        };
-    }, [state])
+        setstate({
+            images: store.getState().list.images,
+            current: store.getState().current
+        });
+        store.subscribe(() => {
+            setstate({
+                images: store.getState().list.images,
+                current: store.getState().current
+            });
+        })
+    }, [1])
 
     return (
         <div className={styles.MemeForm} data-testid="MemeForm">
             <form>
-                <label htmlFor="titre">
+                {/*<label htmlFor="titre">
                     <h1>Titre</h1>
                 </label>
                 <br />
-                <input name="titre" id="titre" value={state.titre} />
-                <hr />
+                <input name="titre" id="titre" value={state.current.titre} />
+                <hr />*/}
                 <label htmlFor="image">
                     <h2>Image</h2>
                 </label>
                 <br />
-                <select name="image" id="image" value={state.imageId}>
+                <select name="image" id="image" value={state.current.imageId} 
+                onChange={(evt)=>{store.dispatch({type:'UPDATE_CURRENT', value:{...state, imageId:Number(evt.target.value)}})}}>
                     <option value={-1}>No images</option>
+                    {state.images.map((e,i)=><option value={e.id} key={`select-image-${i}`}>{e.titre}</option>)}
                 </select>
                 <hr />
                 <label htmlFor="text">
@@ -37,7 +53,8 @@ function MemeForm(props) {
                     name="text"
                     id="text"
                     type="text"
-                    value={state.text}
+                    value={state.current.text}
+                    onChange={(evt)=>{store.dispatch({type:'UPDATE_CURRENT', value:{...state.current, text:evt.target.value}})}}
                 />
                 <br />
                 <label htmlFor="x">
@@ -48,7 +65,8 @@ function MemeForm(props) {
                     name="x"
                     id="x"
                     type="number"
-                    value={state.x}
+                    value={state.current.x}
+                    onChange={(evt)=>{store.dispatch({type:'UPDATE_CURRENT', value:{...state.current, x:Number(evt.target.value)}})}}
                 />
                 <label htmlFor="y">
                     <h2 style={{ display: "inline" }}>y :</h2>
@@ -58,7 +76,8 @@ function MemeForm(props) {
                     name="y"
                     id="y"
                     type="number"
-                    value={state.y}
+                    value={state.current.y}
+                    onChange={(evt)=>{store.dispatch({type:'UPDATE_CURRENT', value:{...state.current, y:Number(evt.target.value)}})}}
                 />
                 <hr />
                 <br />
@@ -70,7 +89,8 @@ function MemeForm(props) {
                     name="color"
                     id="color"
                     type="color"
-                    value={state.color}
+                    value={state.current.color}
+                    onChange={(evt)=>{store.dispatch({type:'UPDATE_CURRENT', value:{...state.current, color:evt.target.value}})}}
                 />
                 <br />
                 <label htmlFor="fontSize">
@@ -81,8 +101,9 @@ function MemeForm(props) {
                     name="fontSize"
                     id="fontSize"
                     type="number"
-                    value={state.fontSize}
+                    value={state.current.fontSize}
                     min={0}
+                    onChange={(evt)=>{store.dispatch({type:'UPDATE_CURRENT', value:{...state.current, fontSize:Number(evt.target.value)}})}}
                 />
                 px
                 <br />
@@ -94,17 +115,19 @@ function MemeForm(props) {
                     name="fontWeight"
                     id="fontWeight"
                     type="number"
-                    value={state.fontWeight}
+                    value={state.current.fontWeight}
                     min={100}
                     step={100}
                     max={900}
+                    onChange={(evt)=>{store.dispatch({type:'UPDATE_CURRENT', value:{...state.current, fontWeight:evt.target.value}})}}
                 />
                 <br />
                 <input
                     name="underine"
                     id="underline"
                     type="checkbox"
-                    checked={state.underline}
+                    checked={state.current.underline}
+                    onChange={(evt)=>{store.dispatch({type:'UPDATE_CURRENT', value:{...state.current, underline:evt.target.checked}})}}
                 />
                 &nbsp;
                 <label htmlFor="underline">
@@ -119,7 +142,8 @@ function MemeForm(props) {
                     name="italic"
                     id="italic"
                     type="checkbox"
-                    checked={state.italic}
+                    checked={state.current.italic}
+                    onChange={(evt)=>{store.dispatch({type:'UPDATE_CURRENT', value:{...state.current, italic:evt.target.checked}})}}
                 />
                 <hr />
                 {/* <br />
@@ -131,7 +155,7 @@ function MemeForm(props) {
               name="frameSizeX"
               id="frameSizeX"
               type="number"
-              value={state.frameSizeX}
+              value={state.current.frameSizeX}
               min={0}
               />
             px{" "}
@@ -143,7 +167,7 @@ function MemeForm(props) {
               name="frameSizeY"
               id="frameSizeY"
               type="number"
-              value={state.frameSizeY}
+              value={state.current.frameSizeY}
               min={0}
               />
             px */}
@@ -162,14 +186,13 @@ function MemeForm(props) {
         </div>
     );
 
-
 }
 
 
 MemeForm.propTypes = {
-    style: PropTypes.object,
-    meme: PropTypes.object.isRequired,
-    onFormChange: PropTypes.func.isRequired
+    // style: PropTypes.object,
+    // meme: PropTypes.object.isRequired,
+    // onFormChange: PropTypes.func.isRequired
 };
 
 
