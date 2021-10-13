@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './MemeViewer.module.css';
-export const demoMeme =  {
+export const demoMeme = {
   meme: {
     id: 0,
     imageId: 0,
@@ -25,19 +25,25 @@ export const demoMeme =  {
 
 
 const MemeViewer = (props) => (
-  <svg className={styles.MemeViewer} data-testid="MemeViewer" viewBox={`0 0 ${props.image.w} ${props.image.h}`}>
-    <image href={props.image.url} />
+  <svg
+    className={styles.MemeViewer}
+    data-testid="MemeViewer"
+    viewBox={`0 0 ${props.image ? props.image.w : 1024} ${props.image ? props.image.h : 1024}`}
+  >
+
+    {props.image && <image href={props.image.url} />}
+
     <text x={props.meme.x} y={props.meme.y} fill={props.meme.color}
       style={
         {
           fontWeight: props.meme.fontWeight,
           fontSize: props.meme.fontSize,
           textDecoration: (props.meme.textDecoration ? 'underline' : 'none'),
-          fontStyle: (props.meme.italic?'italic':'none')
+          fontStyle: (props.meme.italic ? 'italic' : 'none')
         }
-      }> 
+      }>
       {props.meme.text}
-      </text>
+    </text>
   </svg>
 );
 

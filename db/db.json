@@ -14,7 +14,7 @@
     },
     {
       "id": 1,
-      "imageId": 0,
+      "imageId": 1,
       "text": "Si tu utilise pas Hook useState, je recommence",
       "x": 10,
       "y": 200,
@@ -31,7 +31,7 @@
       "y": 200,
       "fontSize": 50,
       "fontWeight": "900",
-      "color": "#0000FF",
+      "color": "#ABA8FF",
       "underline": true,
       "italic": true,
       "id": 2
@@ -42,8 +42,8 @@
       "url": "/img/memes/1ermeme.jpg",
       "titre": "1er meme",
       "id": 0,
-      "w": 1000,
-      "h": 938
+      "w": 1280,
+      "h": 853
     }
   ]
 }
