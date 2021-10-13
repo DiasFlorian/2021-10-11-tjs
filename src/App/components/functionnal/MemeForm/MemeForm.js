@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './MemeForm.module.css';
 import Button from '../../ui/Button/Button';
 import store, { initialMeme } from '../../../store/store';
+import { withRouter} from 'react-router-dom'
 
 
 const initialState = {
@@ -28,7 +29,11 @@ function MemeForm(props) {
 
     return (
         <div className={styles.MemeForm} data-testid="MemeForm">
-            <form>
+            <form onSubmit={(evt)=>{
+                evt.preventDefault();
+                store.dispatch({type:'SAVE_CURRENT'});
+                props.history.push('/Thumbnail');
+            }}>
                 {/*<label htmlFor="titre">
                     <h1>Titre</h1>
                 </label>
@@ -196,4 +201,4 @@ MemeForm.propTypes = {
 };
 
 
-export default MemeForm;
+export default withRouter(MemeForm);

@@ -2,7 +2,10 @@
     height: 80vh;
     overflow-y: auto;
 }
-.MemeThumbnail>svg {
+.MemeThumbnail>div{
+    display: inline-block;
+}
+.MemeThumbnail>div>svg {
     display: inline-block;
     max-width: 512px;
     height: 512px;
